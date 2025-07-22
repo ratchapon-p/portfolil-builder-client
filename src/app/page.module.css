@@ -1,5 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-body {
-  font-family: 'Poppins', sans-serif;
+.homepage-content{
+  display: flex;
+  width: 100%;
+  padding: 20px 10px;
 }
+.homepage-content-left{
+  width: 50%;
+}
+.homepage-content-right{
+  width: 50%;
+}
+/* 
+.highlight-paragraph {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  margin: 1rem 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.highlight-paragraph:hover {
+  background-color: #e6f0ff;
+} */

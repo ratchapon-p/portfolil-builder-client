@@ -1,0 +1,54 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mission {
+  background: #f0f4ff;
+  padding: 20px 30px 10px 30px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.team {
+  margin-bottom: 40px;
+}
+
+.team h2{
+    margin-left: 30px;
+}
+
+.teamGrid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.member {
+  text-align: center;
+  width: 200px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.contact {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+}
