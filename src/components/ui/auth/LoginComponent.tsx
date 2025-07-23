@@ -3,21 +3,31 @@ import "./Auth.css";
 import React from "react";
 import { Form, Input, Button, Typography, message } from "antd";
 import { post } from "@/utils/httpMethod";
+import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import { login } from "@/store/authSlice";
+
 const { Title } = Typography;
 
 function LoginComponent() {
+  const router = useRouter();
+
   const [form] = Form.useForm();
   const onFinish = async(values: { email: string; password: string }) => {
     console.log("Login info:", values);
     try {
       const url = '/user/login'
       const response = await post(url, values);
-      console.log(response,'<<RESRESRSE');
-      message.success(`Logged in as ${values.email}`);
+      if (response.success) {
+        // dispatch(login(response.user));
+        localStorage.setItem("isLoggedIn","true")
+        toast.success(`Logged in as ${values.email}`);
+        router.push("/account")
+      }
 
     } catch (error : any) {
       console.log(error,'<<Error');
-      message.error(error);
+      toast.error(error.response.data.message);
     }
     
   };
@@ -74,6 +84,8 @@ function LoginComponent() {
           </Button>
         </Form.Item>
       </Form>
+      <Toaster position="top-center" />
+
     </div>
   );
 }

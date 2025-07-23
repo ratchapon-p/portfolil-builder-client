@@ -3,14 +3,33 @@ import "./Auth.css"
 
 import React from 'react'
 import { Form, Input, Button, Typography, message } from "antd";
+import { post } from "@/utils/httpMethod";
+import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 const { Title } = Typography;
 
 function RegisterComponent() {
+
+  const router = useRouter();
+
   const [form] = Form.useForm();
-  const onFinish = (values: { email: string; password: string }) => {
-    console.log("Register info:", values);
-    message.success(`Logged in as ${values.email}`);
+
+  const onFinish = async(values: { email: string; password: string }) => {
     // TODO: ทำ API login จริงที่นี่
+    try {
+          const url = '/user/register'
+          const response = await post(url, values);
+          
+          if (response.success) {
+            toast.success("User Created")
+            router.push("/auth?type=login")
+          }
+        } catch (error : any) {
+
+          console.log(error,'<<Error');
+          toast.error(error.response.data.message);
+          
+        }
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -65,6 +84,7 @@ function RegisterComponent() {
           </Button>
         </Form.Item>
       </Form>
+      <Toaster position="top-center" />
     </div>
   );
 }

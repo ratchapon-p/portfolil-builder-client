@@ -1,32 +1,38 @@
 import React from 'react'
-import './Header.css'
+import './header.css'
 import { Button } from 'antd'
 import Link from 'next/link'
 
 const menuItem = [
   {
-    title: 'Home',
-    path: '/'
+    title: 'Profile',
+    path: '/account/profile'
   },
   {
-    title: 'About',
-    path: '/about'
+    title: 'Education',
+    path: '/account/education'
+  },
+  {
+    title: 'Experience',
+    path: '/account/experience'
+  },
+  {
+    title: 'Skill',
+    path: '/account/skill'
   },
   {
     title: 'Contact',
-    path: '/contact'
+    path: '/account/contact'
   },
   {
-    title: 'Sign in',
-    path: '/auth?type=login'
-  },
-  {
-    title: 'Sign up',
-    path: '/auth?type=register'
+    title: 'Certificate',
+    path: '/account/certificate'
   }
 ]
 
 function Header() {
+
+  
 
   return (
     <div className='main-header'>
