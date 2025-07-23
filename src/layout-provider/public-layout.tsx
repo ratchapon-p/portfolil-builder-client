@@ -6,7 +6,7 @@ function PublicLayout({children} : {
 
 }) {
   return (
-    <div>
+    <div style={{marginTop:'75px'}}>
       {children}
     </div>
   )

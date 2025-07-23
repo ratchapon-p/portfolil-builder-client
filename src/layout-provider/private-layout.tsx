@@ -29,8 +29,8 @@ function PrivateLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <div>
-      <PrivateLayoutHeader />
-      <div className="" style={{padding: "20px 25px"}}>
+      <PrivateLayoutHeader  />
+      <div className="" style={{padding: "20px 25px",marginTop:'75px'}}>
         {children}
       </div>
     </div>
